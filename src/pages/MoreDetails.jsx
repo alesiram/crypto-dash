@@ -7,7 +7,7 @@ export default function MoreDetails() {
   const { id } = useParams();
   const [crypto, setCrypto] = useState(null);
 
-  const SINGLE_CRYPTO = `/cg/api/v3/coins/${id}`;
+  const SINGLE_CRYPTO = `https://api.coingecko.com/api/v3/coins/${id}`;
 
   useEffect(() => {
     async function getCrypto() {
@@ -25,7 +25,7 @@ export default function MoreDetails() {
     }
 
     getCrypto();
-  }, []);
+  }, [id]);
 
   if (!crypto) return <p>Loading...</p>;
 
@@ -59,27 +59,29 @@ export default function MoreDetails() {
         <b>High 24h: </b>
         {crypto.market_data?.high_24h?.usd}
       </p>
+
       <div>
         <button
           style={{
-            backgroundColor: '#bae1ff',
+            backgroundColor: "#bae1ff",
             margin: "20px",
             padding: "15px 32px",
             fontSize: "15px",
-            borderRadius: '20px'
+            borderRadius: "20px",
           }}
         >
           <Link style={{ textDecoration: "none" }} to="/">
             go back
           </Link>
         </button>
+
         <button
-        style={{
-            backgroundColor: '#baffc9',
+          style={{
+            backgroundColor: "#baffc9",
             margin: "20px",
             padding: "15px 32px",
             fontSize: "15px",
-            borderRadius: '20px'
+            borderRadius: "20px",
           }}
         >
           <Link style={{ textDecoration: "none" }} to="/Random">
