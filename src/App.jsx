@@ -9,7 +9,7 @@ import NavBar from "./components/NavBar";
 import NotFoundPage from "./pages/NotFoundPage";
 
 const API_URL =
-  "/cg/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=25&page=1&sparkline=false";
+  "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=25&page=1&sparkline=false";
 
 const App = () => {
   const [coins, setCoins] = useState([]);
